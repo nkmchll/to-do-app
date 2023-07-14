@@ -1,7 +1,6 @@
 import inbox from "./inbox";
 import project from "./project";
 
-
 inbox();
 
 let tabSwitch = (function(){

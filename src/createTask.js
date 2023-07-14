@@ -1,6 +1,4 @@
-
-
-    // store tasks in array
+     // store tasks in array
     let taskList = [];
 
     // factory function to create task object
@@ -17,29 +15,26 @@
         
         taskList.push(newTask);
         console.log(taskList)
-        
     }
 
-     // add task to array when submit button is clicked
-     function createTask(){
+    // add task to array when submit button is clicked
+    function createTask(){
         let submitButton = document.querySelector('#submit');
         submitButton.addEventListener('click', function(event){
-            event.preventDefault();
-            let taskInput = document.querySelector('#task');
+        event.preventDefault();
+        let taskInput = document.querySelector('#task');
         if (taskInput.value.trim() === '') {
             // if task is empty, dont allow submission
             return;
         }
-            addTask();
-            render();
-            reset();
-            removeForm();
-    
+        addTask();
+        render();
+        reset();
+        removeForm();
         })
-     }
+    }
      
-
-      // function to display task on screen
+    // function to display task on screen
     function render(){
         let taskContainer = document.querySelector('.task-container');
         taskContainer.innerHTML = "";
@@ -75,7 +70,5 @@
         let newTaskForm = document.querySelector('.form');
         newTaskForm.style.display = 'none';
     }
-
-
 
     export { createTask, render };
