@@ -11,7 +11,6 @@ function inbox(){
     contentTitleText.textContent = 'Inbox';
     contentTitle.appendChild(contentTitleText);
 
-
     const addContent = document.querySelector('.add-content');
     const addTask = document.createElement('div');
     addTask.classList.add('addTask');
@@ -55,6 +54,7 @@ function inbox(){
                 <button type="button" class="cancel-btn">Cancel</button>
             </div>
         </form>`;
+        
     formContainer.appendChild(form)
 
     createTask();
