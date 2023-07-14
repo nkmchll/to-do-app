@@ -1,3 +1,4 @@
+
 // function to replace content when switching tabs
 
 function replaceContent(){
