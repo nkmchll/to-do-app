@@ -10,6 +10,9 @@ function replaceContent(){
     formContainer.replaceChildren();
     const taskContainer = document.querySelector('.task-container')
     taskContainer.replaceChildren();
+    const projectContainer = document.querySelector('.project-container')
+    projectContainer.replaceChildren();
+
 }
 
 export default replaceContent
