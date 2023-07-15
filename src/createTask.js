@@ -14,7 +14,6 @@
         const newTask = createTaskObj(task, dueDate, priority);
         
         taskList.push(newTask);
-        console.log(taskList)
     }
 
     // add task to array when submit button is clicked
@@ -33,6 +32,8 @@
         removeForm();
         })
     }
+
+    
      
     // function to display task on screen
     function render(){
@@ -47,13 +48,48 @@
             let task = taskList[i];
             let taskElement = document.createElement('div');
             taskElement.classList.add('taskList')
-            taskElement.innerHTML = 
-                `<input type = "checkbox" id = task class = task>
-                <label for = task> ${task.task} | ${task.dueDate} | ${task.priority}</label>`;
-            taskContainer.appendChild(taskElement);
+            taskElement.innerHTML =
+                `<div class='task-content'>
+                    <div class='task-detail'>
+                        <input type="checkbox" id="task${i}" class="task">
+                        <label for="task${i}">${task.task} | ${task.dueDate} | ${task.priority}</label>
+                    </div>
+                    <div class='task-buttons'>
+                        <button class='remove-btn'>Remove</button>
+                    </div>
+                </div>`;
+
+        let removeButton = taskElement.querySelector('.remove-btn');
+        removeButton.addEventListener('click', function () {
+            removeTask(i);
+        });
+
+        taskContainer.appendChild(taskElement);
+
         }
         console.log(task.task);
+        displayMessage();
     }
+
+    // function to remove task when remove button is clicked
+    function removeTask(index) {
+        taskList.splice(index, 1);
+        render();
+    }
+
+    // function to display a message when there's no task
+    function displayMessage(){
+        if (taskList.length === 0){
+            console.log("hello");
+            const taskContainer = document.querySelector('.task-container');
+            const message = document.createElement('div');
+            message.textContent = "Yay, we have no tasks!";
+            taskContainer.appendChild(message);
+        }
+
+    }
+
+    
 
     // function to reset input boxes
     function reset(){
@@ -70,5 +106,7 @@
         let newTaskForm = document.querySelector('.form');
         newTaskForm.style.display = 'none';
     }
+
+   
 
     export { createTask, render };

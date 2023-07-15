@@ -99,10 +99,17 @@ body {
 
 .taskList{
     background-color: pink;
-    display: flex;
     padding: 10px;
 }
 
+.task-content{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
 .task:checked + label{
     text-decoration: line-through;
+    
 }
