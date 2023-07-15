@@ -79,14 +79,26 @@
 
     // function to display a message when there's no task
     function displayMessage(){
-        if (taskList.length === 0){
             console.log("hello");
             const taskContainer = document.querySelector('.task-container');
-            const message = document.createElement('div');
-            message.textContent = "Yay, we have no tasks!";
-            taskContainer.appendChild(message);
+            const message1 = document.createElement('div');
+            message1.textContent = "Yay, we have no tasks!";
+            const message2 = document.createElement('div');
+            message2.textContent = "Yay, we finished our tasks!";
+
+        if (taskList.length === 0){
+            taskContainer.appendChild(message1);
         }
 
+        else if (document.querySelectorAll('.task:checked').length === 0){
+            const checkboxes = document.querySelectorAll('.task');
+            checkboxes.forEach((checkbox) => {
+                checkbox.addEventListener('change', () => {
+                taskContainer.appendChild(message2);
+                });
+            });
+
+        }
     }
 
     
