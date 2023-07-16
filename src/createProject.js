@@ -1,3 +1,5 @@
+import displayProjectDetails from "./newProjectTab";
+
 // store projects in array
 let projectList = [];
 
@@ -55,6 +57,15 @@ function render(){
         removeButton.addEventListener('click', function () {
             removeProject(i);
         });
+
+        let viewProjectButton = projectElement.querySelector('.view-btn');
+        viewProjectButton.addEventListener('click', function () {
+            displayProjectDetails(project);
+
+        });
+
+        
+
         projectContainer.appendChild(projectElement);
     }
     displayMessage();
@@ -66,12 +77,20 @@ function createProjectTab(){
     let projectTab = document.createElement('div');
     projectTab.classList.add('projectTabs')
     let projectTitle = document.createElement('div');
-    projectTitle.classList.add('project-title');
+  
     projectsNav.appendChild(projectTab);
     for (let i = 0; i < projectList.length; i++){
         let project = projectList[i];
+        let projectNameClass = project.projectName.replace(/\s/g, ""); // Remove spaces from project name
+        projectTitle.classList.add(`${projectNameClass}`);
         projectTitle.textContent = `+  ${project.projectName}`;
         projectTab.appendChild(projectTitle);
+
+        let viewProjectTab = document.querySelector(`.${projectNameClass}`);
+        viewProjectTab.addEventListener('click', function () {
+             displayProjectDetails(project);
+
+        });
     }
 }
 
