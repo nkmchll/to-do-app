@@ -1,11 +1,13 @@
 import displayProjectDetails from "./newProjectTab";
+import { v4 as uuidv4 } from 'uuid';
+
 
 // store projects in array
 let projectList = [];
 
 // factory function to create project object
 const createProjectObj = (projectName) => {
-    return {projectName};
+    return {projectName, projectId: uuidv4(),};
 };
 
  // function for adding project from the user input to the array
@@ -83,6 +85,7 @@ function createProjectTab(){
         let project = projectList[i];
         let projectNameClass = project.projectName.replace(/\s/g, ""); // Remove spaces from project name
         projectTitle.classList.add(`${projectNameClass}`);
+        projectTitle.setAttribute('id', project.projectId);
         projectTitle.textContent = `+  ${project.projectName}`;
         projectTab.appendChild(projectTitle);
 
