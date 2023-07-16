@@ -12,6 +12,8 @@ function replaceContent(){
     taskContainer.replaceChildren();
     const projectContainer = document.querySelector('.project-container')
     projectContainer.replaceChildren();
+    const returnButton = document.querySelector('.return-btn');
+    returnButton.replaceChildren();
 
 }
 
