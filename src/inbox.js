@@ -7,9 +7,9 @@ function inbox(){
     replaceContent();
     
     const contentTitle = document.querySelector('.content-title');
-    const contentTitleText = document.createElement('div');
-    contentTitleText.textContent = 'Inbox';
-    contentTitle.appendChild(contentTitleText);
+
+    contentTitle.textContent = 'Inbox';
+   
 
     const addContent = document.querySelector('.add-content');
     const addTask = document.createElement('div');
@@ -57,8 +57,9 @@ function inbox(){
         
     formContainer.appendChild(form)
 
-    createTask();
-    render();
+    const content = document.querySelector('.content-title').textContent;
+    createTask(content);
+    render(content);
 }
 
 export default inbox
