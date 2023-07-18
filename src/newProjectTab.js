@@ -69,8 +69,9 @@ returnButtonEvent();
         
     formContainer.appendChild(form)
 
-    createTask();
-    render();
+    let projectId = document.querySelector('.content-title').textContent;
+    createTask(projectId);
+    render(projectId);
 }
 
 export default displayProjectDetails
