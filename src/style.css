@@ -111,6 +111,15 @@ body {
     text-decoration: line-through;
 }
 
+.return-btn{
+    background-color: rgb(212, 203, 130);
+    width: 118px;
+}
+.return-btn:hover{
+    background-color: rgb(156, 148, 92);
+    width: 118px;
+}
+
 .project-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -137,6 +146,14 @@ body {
 .projectTabs{
     font-size: 20px;
     margin-left: 30px;
+}
+
+.projectTabs:hover{
+    font-size: 20px;
+    margin-left: 30px;
+    background-color: rgb(117, 117, 117);
+
+
 }
 
 .project-message{
