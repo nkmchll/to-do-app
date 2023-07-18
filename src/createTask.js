@@ -6,6 +6,8 @@ const createTaskObj = (task, dueDate, priority, projectID) => {
   return { task, dueDate, priority, projectID };
 };
 
+const projectID = document.querySelector('.content-title').textContent;
+
 // function for adding task from the user input to the array
 function addTask(projectID) {
   let task = document.querySelector("#task").value;
@@ -72,7 +74,8 @@ function render(projectID) {
 // function to remove task when remove button is clicked
 function removeTask(index) {
   taskList.splice(index, 1);
-  render();
+  const projectID = document.querySelector('.content-title').textContent;
+  render(projectID);
 }
 
 // function to display a message when there's no task
@@ -80,19 +83,20 @@ function displayMessage(projectID) {
   const taskContainer = document.querySelector(".task-container");
   const message1 = document.createElement("div");
   message1.textContent = "Yay, we have no tasks!";
-  const message2 = document.createElement("div");
-  message2.textContent = "Yay, we finished our tasks!";
+  // const message2 = document.createElement("div");
+  // message2.textContent = "Yay, we finished our tasks!";
 
   if (taskList.length === 0) {
     taskContainer.appendChild(message1);
-  } else if (document.querySelectorAll(".task:checked").length === 0) {
-    const checkboxes = document.querySelectorAll(".task");
-    checkboxes.forEach((checkbox) => {
-      checkbox.addEventListener("change", () => {
-        taskContainer.appendChild(message2);
-      });
-    });
-  }
+  } 
+  // else if (document.querySelectorAll(".task:checked").length === 0) {
+  //   const checkboxes = document.querySelectorAll(".task");
+  //   checkboxes.forEach((checkbox) => {
+  //     checkbox.addEventListener("change", () => {
+  //       taskContainer.appendChild(message2);
+  //     });
+  //   });
+  // }
 }
 
 // function to reset input boxes
