@@ -80,7 +80,7 @@ function createProjectTab(){
     projectsNav.appendChild(projectTab);
     for (let i = 0; i < projectList.length; i++){
         let project = projectList[i];
-        let projectNameClass = project.projectName.replace(/\s/g, ""); // Remove spaces from project name
+        let projectNameClass = project.projectName.replace(/\s/g, "");
         projectTitle.setAttribute('class',`${projectNameClass}` )
         projectTitle.setAttribute('id', project.projectId);
         projectTitle.textContent = `+  ${project.projectName}`;
