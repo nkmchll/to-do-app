@@ -1,7 +1,6 @@
 import displayProjectDetails from "./newProjectTab";
 import { v4 as uuidv4 } from 'uuid';
 
-
 // store projects in array
 let projectList = [];
 
@@ -66,8 +65,6 @@ function render(){
 
         });
 
-        
-
         projectContainer.appendChild(projectElement);
     }
     displayMessage();
@@ -84,7 +81,7 @@ function createProjectTab(){
     for (let i = 0; i < projectList.length; i++){
         let project = projectList[i];
         let projectNameClass = project.projectName.replace(/\s/g, ""); // Remove spaces from project name
-        projectTitle.classList.add(`${projectNameClass}`);
+        projectTitle.setAttribute('class',`${projectNameClass}` )
         projectTitle.setAttribute('id', project.projectId);
         projectTitle.textContent = `+  ${project.projectName}`;
         projectTab.appendChild(projectTitle);
