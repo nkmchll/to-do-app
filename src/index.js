@@ -1,6 +1,6 @@
 import inbox from "./inbox";
 import project from "./project";
-
+import './src/style.css';
 inbox();
 
 let tabSwitch = (function(){
