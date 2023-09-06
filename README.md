@@ -1,4 +1,4 @@
-# to-do-app
+# toDue app
 
 a simple to-do list app to efficiently keep track of tasks and manage projects.
 
